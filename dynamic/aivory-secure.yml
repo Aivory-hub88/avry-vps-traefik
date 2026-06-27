@@ -1,0 +1,18 @@
+http:
+  middlewares:
+    aivory-secure:
+      chain:
+        middlewares: ["aivory-headers", "aivory-ratelimit"]
+    aivory-headers:
+      headers:
+        customResponseHeaders:
+          Server: ""
+          X-Powered-By: ""
+        contentTypeNosniff: true
+        customFrameOptionsValue: "SAMEORIGIN"
+        referrerPolicy: "strict-origin-when-cross-origin"
+    aivory-ratelimit:
+      rateLimit:
+        average: 120
+        burst: 300
+        period: 1s

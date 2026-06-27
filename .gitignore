@@ -1,0 +1,6 @@
+# TLS material — never commit (contains private keys)
+letsencrypt/
+acme.json
+acme*.json
+*.pem
+*.key

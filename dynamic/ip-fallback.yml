@@ -1,0 +1,13 @@
+http:
+  routers:
+    ip-fallback:
+      entryPoints:
+      - web
+      priority: 1
+      rule: HostRegexp(`{ip:129\.226\.155\.216}`)
+      service: main-website
+  services:
+    main-website:
+      loadBalancer:
+        servers:
+        - url: http://avry-website:3000
